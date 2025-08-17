@@ -1,26 +1,67 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-light-gray: #f6f7f9;
+  --color-basic-blue: #3563e9;
+  --color-basic-gray: #52525c;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer components {
+  .icon {
+    @apply text-basic-gray text-lg  p-[.4rem] border border-basic-gray/30 rounded-full max-sm:text-sm;
+    &:hover {
+      @apply bg-basic-gray/15;
+    }
+  }
+
+  .hero {
+    @apply flex flex-col gap-5 flex-1 rounded-lg bg-no-repeat p-4 text-white;
+  }
+
+  .containers {
+    @apply max-w-[1100px] mx-auto p-8;
+  }
+  .shadows {
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5);
+  }
+  .btn {
+    @apply py-2 px-3 rounded-lg w-fit hover:brightness-110 cursor-pointer;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-light-gray);
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 10px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  clip-path: inset(-45px);
+  box-shadow: -60px 15px, -60px 15px, -60px 15px;
+  transform: translateY(-15px);
+  animation: l19 1s infinite linear;
+}
+@keyframes l19 {
+  16.67% {
+    box-shadow: -60px 15px, -60px 15px, 19px 15px;
+  }
+  33.33% {
+    box-shadow: -60px 15px, 0px 15px, 19px 15px;
+  }
+  40%,
+  60% {
+    box-shadow: -19px 15px, 0px 15px, 19px 15px;
+  }
+  66.67% {
+    box-shadow: -19px 15px, 0px 15px, 60px 15px;
+  }
+  83.33% {
+    box-shadow: -19px 15px, 60px 15px, 60px 15px;
+  }
+  100% {
+    box-shadow: 60px 15px, 60px 15px, 60px 15px;
+  }
 }

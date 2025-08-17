@@ -2,8 +2,7 @@
 
 This project is a modern and user-friendly car rental application. Users can browse listed cars, view detailed pages for each vehicle, complete rentals via Stripe, and see their rented cars on the "My Orders" page.
 
-🔗 Live Demo: (Add your live demo link here)
-🔗 GitHub Repository: GitHub Repo
+🔗 GitHub Repository: [GitHub Repo](https://github.com/kisisellhesap/car-rental-next)
 
 🚀 Features
 
